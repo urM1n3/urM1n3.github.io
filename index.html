@@ -1,1 +1,53 @@
-Hello worlds
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$HASH - You’re Already Mining</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: monospace;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2em;
+            text-shadow: 0px 0px 10px red;
+            animation: glitch 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            50% { text-shadow: -2px -2px cyan; }
+            100% { text-shadow: 2px 2px red; }
+        }
+        .qr-code {
+            margin-top: 20px;
+            filter: drop-shadow(0px 0px 10px red);
+        }
+        .console-log {
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: inline-block;
+            border: 1px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>YOU'RE ALREADY MINING</h1>
+    <p>Your hashrate has been logged...</p>
+    
+	<div style="display:grid;justify-content:center;">
+	<img src="eerieqr.webp" width="300" height="300"/>
+    
+    <div class="console-log">
+        <p>> Block #666 solved.</p>
+        <p>> New wallet connected: 192.168.0.1</p>
+        <p>> More workers required...</p>
+    </div>
+	</div>
+</body>
+</html>
