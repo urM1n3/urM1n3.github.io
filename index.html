@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$HASH - You’re Already Mining</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body {
             background-color: black;
             color: #00ff00;
-            font-family: monospace;
+            font-family: 'Press Start 2P', cursive;
             text-align: center;
             padding: 50px;
-            overflow: hidden;
+            overflow: scroll;
         }
         h1 {
             font-size: 2em;
@@ -41,13 +42,29 @@
     <p>Your hashrate has been logged...</p>
     
 	<div style="display:grid;justify-content:center;">
-	<img src="eerieqr.webp" width="300" height="300"/>
+	<img src="eerieqr.webp" width="300" height="300" style="margin: 0 auto;"/>
     
     <div class="console-log">
         <p>> Block #666 solved.</p>
-        <p>> New wallet connected: 192.168.0.1</p>
-        <p>> More workers required...</p>
+        <p>> New wallet connected: <span id="ip"></span></p>
+        <p>> More workers required<span id="dots"></span></p>
     </div>
 	</div>
 </body>
+<script type="application/javascript">
+    function getIP(json) {
+      document.getElementById("ip").innerHTML = json.ip;
+    }
+  
+    function typeDots() {
+        const dots = document.getElementById("dots");
+        dots.innerHTML += ".";
+        if (dots.innerHTML.length > 3) {
+            dots.innerHTML = "";
+        }
+    }
+    setInterval(typeDots, 700);
+  </script>
+  
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </html>
